@@ -1,0 +1,14 @@
+{
+  // 缩进
+  "editor.tabSize": 4,
+  // 保存eslint校验
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "always"
+  },
+  "eslint.format.enable": true,
+  // 校验那些文件
+  "eslint.validate": ["typescript", "javascript", "vue", "html"],
+  // 终端显示
+  "eslint.alwaysShowStatus": true
+  // 加载配置文件
+}
