@@ -8,11 +8,10 @@ export default [
   { languageOptions: { globals: globals.node } },
   { ignores: ["lib/*", "node_modules/*"] },
   pluginJs.configs.recommended,
+  ...tseslint.configs.recommended,
   {
     rules: {
-      "no-unused-vars": "warn",
-      "no-undef": "warn",
+      "@typescript-eslint/no-unused-vars": "warn",
     },
   },
-  ...tseslint.configs.recommended,
 ];

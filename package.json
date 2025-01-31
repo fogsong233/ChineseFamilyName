@@ -6,7 +6,8 @@
   "typings": "./lib/index.d.ts",
   "scripts": {
     "test": "jest --config jestconfig.json",
-    "build": "tsc",
+    "build": "tsc && npx babel lib --out-dir lib",
+    "test-run": "npm run build && node ./lib/index.js",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "eslint --fix",
     "prepare": "npm run build",
@@ -18,6 +19,10 @@
   "author": "FogSong233",
   "license": "ISC",
   "devDependencies": {
+    "@babel/cli": "^7.26.4",
+    "@babel/core": "^7.26.7",
+    "@babel/preset-env": "^7.26.7",
+    "@babel/preset-typescript": "^7.26.0",
     "@eslint/js": "^9.19.0",
     "@typescript-eslint/eslint-plugin": "^8.22.0",
     "@typescript-eslint/parser": "^8.22.0",
@@ -38,6 +43,7 @@
     "url": ""
   },
   "dependencies": {
-    "cn-family-name": "^1.0.0-alpha"
+    "cn-family-name": "^1.0.0-alpha",
+    "source-map-support": "^0.5.21"
   }
 }

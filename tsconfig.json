@@ -3,10 +3,12 @@
         "target": "es6",
         "module": "NodeNext",
         "declaration": true,
+        "sourceMap": true,
         "outDir": "./lib",
         "strict": true,
         "lib": [
-            "es6"
+            "ES2019",
+            "dom"
         ],
         "moduleResolution": "nodenext"
     },
