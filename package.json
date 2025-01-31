@@ -1,7 +1,11 @@
 {
   "name": "cn-family-name",
   "version": "1.0.0-alpha02",
-  "description": "",
+  "description": "中文亲戚名称计算器",
+  "categories": [
+    "Data Science",
+    "Education"
+  ],
   "main": "./lib/index.js",
   "typings": "./lib/index.d.ts",
   "scripts": {
