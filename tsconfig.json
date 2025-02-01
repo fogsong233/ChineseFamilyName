@@ -1,16 +1,17 @@
 {
     "compilerOptions": {
-        "target": "es6",
-        "module": "NodeNext",
+        "target": "ES6",
+        "module": "ESNext",
         "declaration": true,
         "sourceMap": true,
         "outDir": "./lib",
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
         "strict": true,
         "lib": [
             "ES2019",
             "dom"
         ],
-        "moduleResolution": "nodenext"
     },
     "include": [
         "src"

@@ -8,11 +8,11 @@ import {
   DownRelative,
   BirthOrderBranch,
   BirthOrder,
-} from "./kinship-type";
+} from "./kinship-type.js";
 
-export * from "./kinship-type";
+export * from "./kinship-type.js";
 
-import { getName, genRelativeDesc } from "./name";
+import { getName, genRelativeDesc } from "./name.js";
 
 export { getName, genRelativeDesc };
 
@@ -54,7 +54,12 @@ export default class Kinship {
           } else if (
             node.type == NextRelativeType.DOWN ||
             (node instanceof RelationIdentity &&
-              node.identityType !== RelationIdentityType.SELF)
+              node.identityType !== RelationIdentityType.SELF) ||
+            (node instanceof BirthOrderBranch &&
+              !(
+                node.birthOrders.size === 1 &&
+                node.birthOrders.has(BirthOrder.SELF)
+              ))
           ) {
             return false;
           }
@@ -188,6 +193,10 @@ export default class Kinship {
       this.chainEnd.identityType === RelationIdentityType.HUSBAND
     ) {
       this.kinshipChain.pop();
+    } else if (this.chainEnd.type === NextRelativeType.UP) {
+      // 如果是Up,调转性别
+      this.kinshipChain.pop();
+      this.kinshipChain.push(new UpRelative(Sex.FEMALE));
     } else {
       this.kinshipChain.push(new RelationIdentity(RelationIdentityType.WIFE));
     }
@@ -203,6 +212,10 @@ export default class Kinship {
       this.chainEnd.identityType === RelationIdentityType.WIFE
     ) {
       this.kinshipChain.pop();
+    } else if (this.chainEnd.type === NextRelativeType.UP) {
+      // 如果是Up,调转性别
+      this.kinshipChain.pop();
+      this.kinshipChain.push(new UpRelative(Sex.MALE));
     } else {
       this.kinshipChain.push(
         new RelationIdentity(RelationIdentityType.HUSBAND),
@@ -286,20 +299,4 @@ export class ChainStringer {
   static stringifyAll(chain: KinshipChain[]): Array<string> {
     return chain.map((v) => ChainStringer.stringify(v)).flat(1);
   }
-}
-
-for (const strCode of new Kinship(Sex.MALE)
-  .father()
-  .daughter()
-  .olderBrother()
-  .youngerBrother()
-  .son()
-  .olderSister()
-  .daughter()
-  .olderSister()
-  .daughter()
-  .daughter()
-  .genPossibleStr()) {
-  console.log(strCode);
-  console.log(getName(strCode));
 }

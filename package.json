@@ -1,16 +1,17 @@
 {
   "name": "cn-family-name",
-  "version": "1.0.0",
+  "version": "1.3.0",
   "description": "中文亲戚名称计算器",
   "categories": [
     "Data Science",
     "Education"
   ],
   "main": "./lib/index.js",
-  "typings": "./lib/index.d.ts",
+  "types": "./lib/index.d.ts",
+  "type": "module",
   "scripts": {
     "test": "jest --config jestconfig.json",
-    "build": "tsc && npx babel lib --out-dir lib",
+    "build": "tsc",
     "test-run": "npm run build && node ./lib/index.js",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "eslint --fix",

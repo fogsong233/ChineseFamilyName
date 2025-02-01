@@ -90,6 +90,34 @@ export const RelativeNameLookUp = {
   ...genSelfEntries("H_M O_F", "大姑子"),
   ...genSelfEntries("H_M Y_F", "小姑子"),
 
+  ...genSelfEntries("D_M W_F", "儿媳"),
+  ...genSelfEntries("D_F H_M", "女婿"),
+  ...genSelfEntries("U_M D_M W_F", "孙媳"),
+  ...genSelfEntries("U_M D_F H_M", "孙女婿"),
+  ...genSelfEntries("U_F D_M W_F", "外孙媳"),
+  ...genSelfEntries("U_F D_F H_M", "外孙女婿"),
+  ...genSelfEntries("Y_M D_M W_F", "侄媳"),
+  ...genSelfEntries("Y_M D_F H_M", "侄女婿"),
+  ...genSelfEntries("Y_F D_M W_F", "外甥媳"),
+  ...genSelfEntries("Y_F D_F H_M", "外甥女婿"),
+  ...genSelfEntries("O_M D_M W_F", "侄媳"),
+  ...genSelfEntries("O_M D_F H_M", "侄女婿"),
+  ...genSelfEntries("O_F D_M W_F", "外甥媳"),
+  ...genSelfEntries("O_F D_F H_M", "外甥女婿"),
+
+  ...genSelfEntries("W_F D_M H_M", "表侄婿"),
+  ...genSelfEntries("W_F D_F H_M", "表侄婿"),
+  ...genSelfEntries("W_F Y_M H_M", "表侄婿"),
+  ...genSelfEntries("W_F Y_M H_M", "表侄婿"),
+  ...genSelfEntries("W_F O_F H_M", "表侄婿"),
+  ...genSelfEntries("W_F Y_F H_M", "表侄婿"),
+  ...genSelfEntries("H_M D_M W_F", "堂侄媳"),
+  ...genSelfEntries("H_M D_F W_F", "堂侄媳"),
+  ...genSelfEntries("H_M Y_M W_F", "堂侄媳"),
+  ...genSelfEntries("H_M Y_M W_F", "堂侄媳"),
+  ...genSelfEntries("H_M O_F W_F", "堂侄媳"),
+  ...genSelfEntries("H_M Y_F W_F", "堂侄媳"),
+
   // 三代
   ...genSelfEntries("U_M U_M U_M", "曾祖父"),
   ...genSelfEntries("U_M U_M U_F", "曾祖母"),
@@ -285,4 +313,101 @@ export const RelativeNameLookUp = {
   ...genSelfEntries("H_M Y_F D_M D_F", "堂侄孙女"),
   ...genSelfEntries("H_M Y_F D_F D_M", "堂外孙"),
   ...genSelfEntries("H_M Y_F D_F D_F", "堂外孙女"),
+
+  // 母亲的哥哥
+  ...genSelfEntries("U_F O_M", "舅舅"),
+  // 母亲的哥哥的妻子
+  ...genSelfEntries("U_F O_M W_F", "舅母"),
+  // 母亲的哥哥的儿子
+  ...genSelfEntries("U_F O_M D_M", "表哥"),
+  // 母亲的哥哥的女儿
+  ...genSelfEntries("U_F O_M D_F", "表姐"),
+  // 母亲的弟弟的妻子
+  ...genSelfEntries("U_F Y_M W_F", "姨夫"),
+  // 母亲的弟弟的儿子
+  ...genSelfEntries("U_F Y_M D_M", "表弟"),
+  // 母亲的弟弟的女儿
+  ...genSelfEntries("U_F Y_M D_F", "表妹"),
+  // 母亲的姐姐的儿子
+  ...genSelfEntries("U_F O_F D_M", "表哥"),
+  // 母亲的姐姐的女儿
+  ...genSelfEntries("U_F O_F D_F", "表姐"),
+  // 母亲的妹妹的儿子
+  ...genSelfEntries("U_F Y_F D_M", "表弟"),
+  // 母亲的妹妹的女儿
+  ...genSelfEntries("U_F Y_F D_F", "表妹"),
+  // 母亲的哥哥的孙子
+  ...genSelfEntries("U_F O_M D_M D_M", "表侄"),
+  // 母亲的哥哥的孙女
+  ...genSelfEntries("U_F O_M D_M D_F", "表侄女"),
+  // 母亲的哥哥的外孙
+  ...genSelfEntries("U_F O_M D_F D_M", "表外甥"),
+  // 母亲的哥哥的外孙女
+  ...genSelfEntries("U_F O_M D_F D_F", "表外甥女"),
+  // 母亲的弟弟的孙子
+  ...genSelfEntries("U_F Y_M D_M D_M", "表侄"),
+  // 母亲的弟弟的孙女
+  ...genSelfEntries("U_F Y_M D_M D_F", "表侄女"),
+  // 母亲的弟弟的外孙
+  ...genSelfEntries("U_F Y_M D_F D_M", "表外甥"),
+  // 母亲的弟弟的外孙女
+  ...genSelfEntries("U_F Y_M D_F D_F", "表外甥女"),
+  // 母亲的弟弟
+  ...genSelfEntries("U_F Y_M", "小舅"),
+  // 母亲的弟弟的妻子
+  ...genSelfEntries("U_F Y_M W_F", "小舅母"),
+  // 母亲的弟弟的儿子
+  ...genSelfEntries("U_F Y_M D_M", "表弟"),
+  // 母亲的弟弟的女儿
+  ...genSelfEntries("U_F Y_M D_F", "表妹"),
+  // 母亲的弟弟的孙子
+  ...genSelfEntries("U_F Y_M D_M D_M", "表侄"),
+  // 母亲的弟弟的孙女
+  ...genSelfEntries("U_F Y_M D_M D_F", "表侄女"),
+  // 母亲的弟弟的外孙
+  ...genSelfEntries("U_F Y_M D_F D_M", "表外甥"),
+  // 母亲的弟弟的外孙女
+  ...genSelfEntries("U_F Y_M D_F D_F", "表外甥女"),
+  // 母亲的弟弟的儿媳
+  ...genSelfEntries("U_F Y_M D_M W_F", "表弟媳"),
+  // 母亲的弟弟的女婿
+  ...genSelfEntries("U_F Y_M D_F H_M", "表妹夫"),
+
+  // 母亲的姐姐
+  ...genSelfEntries("U_F O_F", "大姨"),
+  // 母亲的姐姐的儿子
+  ...genSelfEntries("U_F O_F D_M", "表哥"),
+  // 母亲的姐姐的女儿
+  ...genSelfEntries("U_F O_F D_F", "表姐"),
+  // 母亲的姐姐的孙子
+  ...genSelfEntries("U_F O_F D_M D_M", "表侄"),
+  // 母亲的姐姐的孙女
+  ...genSelfEntries("U_F O_F D_M D_F", "表侄女"),
+  // 母亲的姐姐的外孙
+  ...genSelfEntries("U_F O_F D_F D_M", "表外甥"),
+  // 母亲的姐姐的外孙女
+  ...genSelfEntries("U_F O_F D_F D_F", "表外甥女"),
+  // 母亲的姐姐的儿媳
+  ...genSelfEntries("U_F O_F D_M W_F", "表嫂"),
+  // 母亲的姐姐的女婿
+  ...genSelfEntries("U_F O_F D_F H_M", "表姐夫"),
+
+  // 母亲的妹妹
+  ...genSelfEntries("U_F Y_F", "小姨"),
+  // 母亲的妹妹的儿子
+  ...genSelfEntries("U_F Y_F D_M", "表弟"),
+  // 母亲的妹妹的女儿
+  ...genSelfEntries("U_F Y_F D_F", "表妹"),
+  // 母亲的妹妹的孙子
+  ...genSelfEntries("U_F Y_F D_M D_M", "表侄"),
+  // 母亲的妹妹的孙女
+  ...genSelfEntries("U_F Y_F D_M D_F", "表侄女"),
+  // 母亲的妹妹的外孙
+  ...genSelfEntries("U_F Y_F D_F D_M", "表外甥"),
+  // 母亲的妹妹的外孙女
+  ...genSelfEntries("U_F Y_F D_F D_F", "表外甥女"),
+  // 母亲的妹妹的儿媳
+  ...genSelfEntries("U_F Y_F D_M W_F", "表弟媳"),
+  // 母亲的妹妹的女婿
+  ...genSelfEntries("U_F Y_F D_F H_M", "表妹夫"),
 };
